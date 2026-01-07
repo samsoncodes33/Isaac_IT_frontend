@@ -9,49 +9,23 @@
   <body>
     <!-- Background Slider -->
     <div class="background-slider">
-      <div
-        class="slide active"
-        style="
-          background-image: url('https://images.unsplash.com/photo-1557683316-973673baf926?auto=format&fit=crop&w=1920&q=80');
-        "
-      ></div>
-      <div
-        class="slide"
-        style="
-          background-image: url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1920&q=80');
-        "
-      ></div>
-      <div
-        class="slide"
-        style="
-          background-image: url('https://images.unsplash.com/photo-1487528278747-ba99ed528ebc?auto=format&fit=crop&w=1920&q=80');
-        "
-      ></div>
-      <div
-        class="slide"
-        style="
-          background-image: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1920&q=80');
-        "
-      ></div>
-      <div
-        class="slide"
-        style="
-          background-image: url('https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=1920&q=80');
-        "
-      ></div>
+      <div class="slide active bg1"></div>
+      <div class="slide bg2"></div>
+      <div class="slide bg3"></div>
+      <div class="slide bg4"></div>
+      <div class="slide bg5"></div>
     </div>
 
     <!-- Overlay -->
     <div class="overlay"></div>
 
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Main navigation">
       <div class="nav-logo">SIFMS</div>
-      <ul class="nav-links">
+      <ul class="nav-links" id="navLinks">
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
-        <!-- Redirect to Signup.html -->
         <li><a href="/HTML/Signup.html" class="login-btn">Signup</a></li>
         <li><a href="/HTML/login.html" class="login-btn">Login</a></li>
       </ul>
@@ -62,12 +36,14 @@
       <div class="hero-content">
         <h1>WELCOME TO SIFMS</h1>
         <p class="tagline">Student Information & Feedback Management System</p>
+
         <p class="description">
           The Student Information & Feedback Management System (SIFMS) of the
           University of Nigeria, Nsukka (UNN) is designed to enhance transparent
           communication between students and the Student Union Government (SUG),
           especially the Director of Information (DOI).
         </p>
+
         <p class="description">
           Students can submit complaints, feedback, and suggestions directly to
           the DOI for prompt attention and resolution.
@@ -78,7 +54,6 @@
           <p class="doi-name">Ozowara Chibueze Isaac</p>
         </div>
 
-        <!-- Redirect to Signup.html -->
         <a href="/HTML/Signup.html" class="cta-btn">Signup Now</a>
       </div>
     </section>
