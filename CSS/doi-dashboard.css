@@ -1,0 +1,442 @@
+/* ========== GLOBAL STYLES ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #0f172a;
+  color: #e2e8f0;
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  font-size: 14px;
+}
+
+/* ========== DASHBOARD CONTAINER ========== */
+.dashboard-container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ========== SIDEBAR FIXED ========== */
+.sidebar {
+  width: 220px;
+  background-color: #1e293b;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  border-right: 1px solid #334155;
+  transition: width 0.3s ease;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.3);
+  overflow-y: auto;
+  padding: 10px 0 15px 0;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  z-index: 100;
+  border-radius: 0 12px 12px 0;
+}
+
+.sidebar-header {
+  text-align: center;
+  padding: 15px 10px;
+  border-bottom: 1px solid #334155;
+}
+
+.sidebar-header h2 {
+  color: #38bdf8;
+  font-size: 18px;
+  margin-bottom: 3px;
+}
+
+.sidebar-header p {
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+/* ========== SIDEBAR MENU ========== */
+.menu-section {
+  flex: 1; /* pushes logout to bottom */
+}
+
+.sidebar-menu {
+  list-style: none;
+  padding: 10px 0;
+}
+
+.sidebar-menu li {
+  padding: 10px 15px;
+  cursor: pointer;
+  color: #e2e8f0;
+  display: flex;
+  align-items: center;
+  border-radius: 6px;
+  margin: 3px 10px;
+  transition: all 0.3s ease;
+  font-size: 13px;
+}
+
+.sidebar-menu li i {
+  margin-right: 8px;
+  font-size: 14px;
+}
+
+.sidebar-menu li:hover,
+.sidebar-menu li.active {
+  background-color: #334155;
+  border-left: 3px solid #38bdf8;
+}
+
+/* Logout styling */
+#logout {
+  color: #f87171;
+  font-weight: 600;
+  text-align: center;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  margin: 10px;
+}
+
+#logout:hover {
+  background-color: #dc2626;
+  color: #fff;
+}
+
+/* ========== MAIN CONTENT ========== */
+.main-content {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+  margin-left: 220px; /* space for sidebar */
+  height: 100vh;
+  transition: margin-left 0.3s ease;
+}
+
+/* Content sections */
+.content-section {
+  display: none;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.content-section.active {
+  display: block;
+}
+
+/* ========== HEADERS & TEXT ========== */
+h1,
+h2 {
+  color: #38bdf8;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+p {
+  line-height: 1.4;
+  color: #cbd5e1;
+  font-size: 13px;
+}
+
+/* ========== BOXES & CARDS ========== */
+.box {
+  background-color: #1e293b;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.35);
+}
+
+/* ========== COMPLAINT CONTAINERS ========== */
+.complaints-container {
+  background-color: #1e293b;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  margin-top: 8px;
+  overflow-y: auto;
+  max-height: 50vh;
+}
+
+.complaint-item {
+  background-color: #334155;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-left: 3px solid #38bdf8;
+}
+
+.complaint-item p {
+  margin-bottom: 6px;
+  font-size: 13px;
+}
+
+.complaint-item button {
+  background-color: #38bdf8;
+  color: #0f172a;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 13px;
+}
+
+.complaint-item button:hover {
+  background-color: #0ea5e9;
+}
+
+/* Responses */
+.existing-responses {
+  margin-top: 8px;
+  padding: 8px;
+  background-color: #1e293b;
+  border-left: 3px solid #22c55e;
+  border-radius: 6px;
+}
+
+.response-box {
+  background-color: #0f172a;
+  padding: 6px;
+  margin-bottom: 6px;
+  border-radius: 6px;
+  border: 1px solid #334155;
+  font-size: 12px;
+}
+
+/* ========== FORMS ========== */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #475569;
+  background-color: #1e293b;
+  color: #e2e8f0;
+  font-size: 13px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #38bdf8;
+  box-shadow: 0 0 4px #38bdf8;
+}
+
+textarea {
+  height: 100px;
+  resize: none;
+}
+
+/* Password container */
+.password-container {
+  position: relative;
+}
+
+.password-container .toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 16px;
+  color: #38bdf8;
+}
+
+/* Submit buttons */
+.submit-btn {
+  background-color: #38bdf8;
+  border: none;
+  color: #0f172a;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.submit-btn:hover {
+  background-color: #0ea5e9;
+}
+
+/* Status messages */
+.status-msg {
+  margin-top: 8px;
+  font-size: 12px;
+  padding: 8px;
+  border-radius: 6px;
+}
+
+.status-msg.success {
+  background-color: #22c55e;
+  color: #fff;
+}
+
+.status-msg.error {
+  background-color: #ef4444;
+  color: #fff;
+}
+
+/* ========== PROFILE SECTION ========== */
+.profile-card {
+  background-color: #1e293b;
+  padding: 20px;
+  border-radius: 10px;
+  line-height: 1.6;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.profile-card p {
+  color: #cbd5e1;
+  font-size: 13px;
+}
+
+.profile-card span {
+  color: #38bdf8;
+}
+
+/* ========== LOGOUT MODAL ========== */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(15, 23, 42, 0.85);
+}
+
+.modal-content {
+  background-color: #1e293b;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  max-width: 350px;
+  margin: auto;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+}
+
+.modal-content p {
+  font-size: 14px;
+  margin-bottom: 15px;
+  color: #cbd5e1;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
+.modal-buttons .btn {
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+#logoutYes {
+  background-color: #ef4444;
+  color: #fff;
+}
+
+#logoutYes:hover {
+  background-color: #dc2626;
+}
+
+#logoutNo {
+  background-color: #38bdf8;
+  color: #0f172a;
+}
+
+#logoutNo:hover {
+  background-color: #0ea5e9;
+}
+
+/* ========== RESPONSIVENESS ========== */
+@media (max-width: 900px) {
+  .sidebar {
+    width: 180px;
+  }
+
+  .sidebar-menu li {
+    font-size: 12px;
+  }
+
+  .main-content {
+    padding: 10px;
+    margin-left: 180px;
+  }
+}
+
+@media (max-width: 700px) {
+  .dashboard-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    flex-direction: row;
+    overflow-x: auto;
+    border-bottom: 1px solid #334155;
+    border-radius: 0;
+  }
+
+  .sidebar-menu {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .sidebar-menu li {
+    flex: 1;
+    text-align: center;
+    padding: 8px;
+  }
+
+  .main-content {
+    margin-left: 0;
+    margin-top: 10px;
+    padding: 10px;
+  }
+}
+
+/* ========== ANIMATIONS ========== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(3px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

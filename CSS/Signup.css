@@ -1,0 +1,134 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  color: #fff;
+  background: #000;
+}
+
+/* Navigation */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  z-index: 10;
+}
+
+.nav-logo {
+  font-size: 28px;
+  font-weight: 700;
+  color: #00d9ff;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  font-size: 17px;
+  transition: 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #00d9ff;
+}
+
+/* Signup Section */
+.signup-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 120px 20px 50px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.signup-section h2 {
+  color: #00d9ff;
+  font-size: 36px;
+  margin-bottom: 25px;
+}
+
+.signup-form {
+  max-width: 700px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.signup-form input,
+.signup-form select {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.signup-form input:focus,
+.signup-form select:focus {
+  border: 2px solid #00d9ff;
+}
+
+.signup-form button {
+  background: #00d9ff;
+  color: #000;
+  font-weight: 600;
+  border: none;
+  padding: 14px 30px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.signup-form button:hover {
+  background: #fff;
+  color: #00d9ff;
+  transform: scale(1.05);
+}
+
+#signupMsg {
+  margin-top: 15px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+#togglePassword {
+  position: absolute;
+  right: 20px;
+  top: 14px;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .signup-form {
+    padding: 30px 20px;
+  }
+
+  .signup-section {
+    padding: 140px 20px 50px;
+  }
+}

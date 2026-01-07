@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOI Dashboard - SIFMS</title>
+    <link rel="stylesheet" href="/CSS/doi-dashboard.css" />
+  </head>
+  <body>
+    <div class="dashboard-container">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <h2>DOI Panel</h2>
+          <p id="doi-name">Welcome, DOI</p>
+        </div>
+        <ul class="sidebar-menu">
+          <li class="active" data-section="overview">🏠 Dashboard</li>
+          <li data-section="view-all">📋 View All Complaints</li>
+          <li data-section="respond">↩️ Respond to Complaints</li>
+          <li data-section="make">✏️ Make a Complaint</li>
+          <li data-section="personal">👤 My Complaints</li>
+          <li data-section="profile">🆔 Profile</li>
+          <li id="logout">🚪 Logout</li>
+        </ul>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <!-- Overview -->
+        <section id="overview" class="content-section active">
+          <h1 id="welcome-title">Welcome</h1>
+          <p>
+            Manage student complaints, respond to them, and make your own
+            complaints from this dashboard.
+          </p>
+        </section>
+
+        <!-- View All Complaints -->
+        <section id="view-all" class="content-section">
+          <h2>All Complaints</h2>
+          <div id="all-complaints-container" class="complaints-container">
+            <p>Loading complaints...</p>
+          </div>
+        </section>
+
+        <!-- Respond to Complaints -->
+        <section id="respond" class="content-section">
+          <h2>Respond to Complaints</h2>
+          <div id="respond-container" class="complaints-container">
+            <p>Loading complaints...</p>
+          </div>
+        </section>
+
+        <!-- Make a Complaint -->
+        <section id="make" class="content-section">
+          <h2>Make a Complaint</h2>
+          <form id="makeComplaintForm">
+            <textarea
+              id="complaintText"
+              placeholder="Enter your complaint..."
+              required
+            ></textarea>
+            <button type="submit" class="submit-btn" id="submitComplaintBtn">
+              Submit Complaint
+            </button>
+          </form>
+          <div id="makeComplaintMsg" class="status-msg"></div>
+        </section>
+
+        <!-- My Complaints -->
+        <section id="personal" class="content-section">
+          <h2>My Complaints</h2>
+          <div id="my-complaints-container" class="complaints-container">
+            <p>Loading your complaints...</p>
+          </div>
+        </section>
+
+        <!-- Profile -->
+        <section id="profile" class="content-section">
+          <h2>Profile Information</h2>
+          <div class="profile-card" id="profile-details">
+            <p>
+              <strong>Full Name:</strong> <span id="profileFullName"></span>
+            </p>
+            <p>
+              <strong>Registration Number:</strong>
+              <span id="profileRegNo"></span>
+            </p>
+            <p>
+              <strong>Department:</strong> <span id="profileDepartment"></span>
+            </p>
+            <p><strong>Faculty:</strong> <span id="profileFaculty"></span></p>
+            <p>
+              <strong>Phone Number:</strong>
+              <span id="profilePhoneNumber"></span>
+            </p>
+            <p><strong>Gender:</strong> <span id="profileGender"></span></p>
+            <p><strong>Role:</strong> <span id="profileRole"></span></p>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- Logout Confirmation Modal -->
+    <div id="logoutModal" class="modal">
+      <div class="modal-content">
+        <p>Are you sure you want to log out?</p>
+        <div class="modal-buttons">
+          <button id="logoutYes" class="btn">Yes</button>
+          <button id="logoutNo" class="btn">No</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- JS Dashboard -->
+    <script src="/JS/doi-dashboard.js"></script>
+  </body>
+</html>

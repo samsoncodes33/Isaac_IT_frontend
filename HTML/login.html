@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SIFMS Login</title>
+    <link rel="stylesheet" href="/CSS/login.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="login-container">
+      <form id="loginForm">
+        <h2>Login to SIFMS</h2>
+
+        <div class="input-group">
+          <label for="reg_no">Registration Number</label>
+          <input
+            type="text"
+            id="reg_no"
+            name="reg_no"
+            placeholder="Enter registration number"
+            required
+          />
+        </div>
+
+        <div class="input-group password-group">
+          <label for="password">Password</label>
+          <div class="password-wrapper">
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Enter password"
+              required
+            />
+            <i id="togglePassword" class="fa-solid fa-eye-slash"></i>
+          </div>
+        </div>
+
+        <button type="submit" class="login-btn">Login</button>
+        <p id="login-message"></p>
+      </form>
+    </div>
+
+    <script src="/JS/login.js"></script>
+  </body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Dashboard - SIFMS</title>
+    <link rel="stylesheet" href="/CSS/student-dashboard.css" />
+    <script
+      src="https://kit.fontawesome.com/a2e0c6f6b4.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="dashboard-container">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <h2>Student Panel</h2>
+          <p id="doi-name">Welcome, Student</p>
+        </div>
+        <ul class="sidebar-menu">
+          <li class="active" data-section="dashboard">
+            <i class="fas fa-tachometer-alt"></i> Dashboard
+          </li>
+          <li data-section="make">
+            <i class="fas fa-edit"></i> Make a Complaint
+          </li>
+          <li data-section="personal">
+            <i class="fas fa-user"></i> My Complaints
+          </li>
+          <li data-section="profile">
+            <i class="fas fa-id-badge"></i> Profile
+          </li>
+          <li id="logout"><i class="fas fa-sign-out-alt"></i> Logout</li>
+        </ul>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <!-- Dashboard Section -->
+        <section id="dashboard" class="content-section">
+          <h2>Dashboard</h2>
+          <p>
+            Welcome to your dashboard! Here you can see an overview of your
+            complaints and profile.
+          </p>
+        </section>
+
+        <!-- Make a Complaint -->
+        <section id="make" class="content-section">
+          <h2>Make a Complaint</h2>
+          <form id="makeComplaintForm">
+            <textarea
+              id="complaintText"
+              placeholder="Enter your complaint..."
+              required
+            ></textarea>
+            <button type="submit" class="submit-btn" id="submitComplaintBtn">
+              Submit Complaint
+            </button>
+          </form>
+          <div id="makeComplaintMsg" class="status-msg"></div>
+        </section>
+
+        <!-- My Complaints -->
+        <section id="personal" class="content-section">
+          <h2>My Complaints</h2>
+          <div id="my-complaints-container" class="complaints-container">
+            <p>Loading your complaints...</p>
+          </div>
+        </section>
+
+        <!-- Profile -->
+        <section id="profile" class="content-section">
+          <h2>Profile Information</h2>
+          <div class="profile-card" id="profile-details">
+            <p>
+              <strong>Full Name:</strong> <span id="profileFullName"></span>
+            </p>
+            <p>
+              <strong>Registration Number:</strong>
+              <span id="profileRegNo"></span>
+            </p>
+            <p>
+              <strong>Department:</strong> <span id="profileDepartment"></span>
+            </p>
+            <p><strong>Faculty:</strong> <span id="profileFaculty"></span></p>
+            <p>
+              <strong>Phone Number:</strong>
+              <span id="profilePhoneNumber"></span>
+            </p>
+            <p><strong>Gender:</strong> <span id="profileGender"></span></p>
+            <p><strong>Role:</strong> <span id="profileRole"></span></p>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- Logout Confirmation Modal -->
+    <div id="logoutModal" class="modal">
+      <div class="modal-content">
+        <p>Are you sure you want to log out?</p>
+        <div class="modal-buttons">
+          <button id="logoutYes" class="btn">Yes</button>
+          <button id="logoutNo" class="btn">No</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- JS Dashboard -->
+    <script src="/JS/student-dashboard.js"></script>
+  </body>
+</html>
