@@ -1,9 +1,8 @@
 {
   "name": "render-node-app",
   "version": "1.0.0",
-  "main": "main.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node JS/main.js"
   },
   "dependencies": {
     "express": "^4.19.2"
